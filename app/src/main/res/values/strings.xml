@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">1168421786542559</string>
+
+    <string name="profile_name">Profile Name</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_profile_page">Profile Page</string>
+    <string name="title_activity_add_inventory_item">Add Inventory Item</string>
+    <string name="AddBookField">Fill In The Book  Properties</string>
+    <string name="AddMovieField">Fill In The Movie Properties</string>
+    <string name="tvAuthor">Author</string>
+    <string name="tvBookTitle">Title</string>
+    <string name="MovieTitle">Movie Title</string>
+    <string name="MovieYear">Year Of Release</string>
+    <string name="SubmitBook">Add Book</string>
+    <string name="SubmitMovie">Add Movie</string>
+
+    <color name="green">#00FF00</color>
+    <color name="pink">#FF00FF</color>
+
+    <string name="new_book">New Book</string>
+    <string name="choose_menu">Choose a Menu Option</string>
+    <string name="view_all_books">View All Books</string>
+    <string name="remove_book">Remove Book</string>
+    <string name="update_book">Update Book</string>
+    <string name="add_book">Add Book</string>
+    <string name="add_book_name">Book Title</string>
+    <string name="add_book_author">Author</string>
+    <string name="add_book_isbn">ISBN</string>
+    <string name="enter_book_id">Enter Book ID</string>
+    <string name="settings">Settings</string>
+    <!--string name="action_settings">Main Menu</string-->
+
+</resources>
