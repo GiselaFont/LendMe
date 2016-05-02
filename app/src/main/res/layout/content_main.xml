@@ -8,88 +8,18 @@
     tools:context="com.example.mg.lendme.Login"
     android:onClick="onButtonClick"
     android:nestedScrollingEnabled="false"
-    android:background="#caf1f0"
+    android:background="white"
     android:textAlignment="center">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
-        android:layout_above="@+id/TBcreateaccount"
-        android:layout_toRightOf="@+id/info"
-        android:layout_toEndOf="@+id/info"
-        android:layout_marginBottom="32dp" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/Blogin"
-        android:layout_toStartOf="@+id/Blogin" />
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/TFusername"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/TFusername"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/TFpassword"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log in"
-        android:id="@+id/Blogin"
-        android:background="#ffffff"
-        android:layout_below="@+id/TFpassword"
-        android:layout_alignRight="@+id/TFpassword"
-        android:layout_alignEnd="@+id/TFpassword"
-        android:onClick="bLogin"
-        android:nestedScrollingEnabled="false" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create New Account"
-        android:id="@+id/TBcreateaccount"
-        android:background="#caf1f0"
-        android:onClick="bCreateAccount"
+        android:layout_marginBottom="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="65dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,4 +29,16 @@
         android:layout_alignParentTop="true"
         android:textSize="18sp"
         />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@mipmap/Sharewithme"
+        android:layout_above="@+id/login_button"
+        android:layout_toRightOf="@+id/info"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>
