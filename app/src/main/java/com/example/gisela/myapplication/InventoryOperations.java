@@ -102,7 +102,6 @@ public class InventoryOperations {
 
     // Deleting Book
     public void removeBook(Book book) {
-
         database.delete(InventoryDBHandler.TABLE_BOOKS, InventoryDBHandler.COLUMN_BOOK_ID + "=" + book.getBookId(), null);
     }
 

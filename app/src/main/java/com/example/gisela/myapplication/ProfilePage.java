@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.facebook.login.LoginManager;
+
 /**
  * Created by Gisela on 4/16/16.
  */
@@ -21,6 +24,7 @@ public class ProfilePage extends AppCompatActivity {
     private Button editBookButton;
     private Button deleteBookButton;
     private Button viewAllBookButton;
+    private Button logOutButton;
     private InventoryOperations bookOps;
     private static final String EXTRA_BOOK_ID = "com.example.bookId";
     private static final String EXTRA_ADD_UPDATE = "com.example.add_update";
@@ -34,9 +38,19 @@ public class ProfilePage extends AppCompatActivity {
         editBookButton = (Button) findViewById(R.id.button_edit_book);
         deleteBookButton = (Button) findViewById(R.id.button_delete_book);
         viewAllBookButton = (Button)findViewById(R.id.button_view_books);
+        logOutButton = (Button) findViewById(R.id.Blogout);
 
         bookOps = new InventoryOperations(ProfilePage.this);
         bookOps.open();
+
+        logOutButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                LoginManager.getInstance().logOut();
+                Intent i = new Intent(ProfilePage.this,MainActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         addBookButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,10 +121,16 @@ public class ProfilePage extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
                         // get user input and set it to result
                         // edit text
-                        Intent i = new Intent(ProfilePage.this,AddUpdateBook.class);
-                        i.putExtra(EXTRA_ADD_UPDATE, "Update");
-                        i.putExtra(EXTRA_BOOK_ID, Long.parseLong(userInput.getText().toString()));
-                        startActivity(i);
+                        try {
+                            Intent i = new Intent(ProfilePage.this, AddUpdateBook.class);
+                            i.putExtra(EXTRA_ADD_UPDATE, "Update");
+                            i.putExtra(EXTRA_BOOK_ID, Long.parseLong(userInput.getText().toString()));
+                            startActivity(i);
+                        }
+                        catch(Exception ex){
+                            Toast t = Toast.makeText(ProfilePage.this, "Invalid book entry!", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
                     }
                 }).create()
                 .show();
@@ -137,9 +157,15 @@ public class ProfilePage extends AppCompatActivity {
                         // get user input and set it to result
                         // edit text
                         //bookOps = new InventoryOperations(MainActivity.this);
-                        bookOps.removeBook(bookOps.getBook(Long.parseLong(userInput.getText().toString())));
-                        Toast t = Toast.makeText(ProfilePage.this,"Book removed successfully!",Toast.LENGTH_SHORT);
-                        t.show();
+                        try {
+                            bookOps.removeBook(bookOps.getBook(Long.parseLong(userInput.getText().toString())));
+                            Toast t = Toast.makeText(ProfilePage.this, "Book removed successfully!", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
+                        catch(Exception ex){
+                            Toast t = Toast.makeText(ProfilePage.this, "Invalid book entry!", Toast.LENGTH_SHORT);
+                            t.show();
+                        }
                     }
                 }).create()
                 .show();

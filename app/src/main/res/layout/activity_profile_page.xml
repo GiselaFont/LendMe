@@ -42,4 +42,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/view_all_books"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:id="@+id/Blogout"
+        android:background="#ffffff"
+        android:onClick="bLoginOut"
+        android:nestedScrollingEnabled="false"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
