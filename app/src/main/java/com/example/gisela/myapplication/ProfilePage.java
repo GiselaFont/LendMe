@@ -174,14 +174,18 @@ public class ProfilePage extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //
+
         bookOps.open();
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        LoginManager.getInstance().logOut();
         bookOps.close();
+        Intent i = new Intent(ProfilePage.this, MainActivity.class);
+        startActivity(i);
 
     }
 

@@ -90,24 +90,6 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    public void bLogin(View v)
-    {
-        if(v.getId() == R.id.Blogin)
-        {
-            Intent i = new Intent(MainActivity.this, ProfilePage.class);
-            startActivity(i);
-        }
-    }
-
-    public void bCreateAccount(View v)
-    {
-        if(v.getId() == R.id.TBcreateaccount)
-        {
-            Intent i = new Intent(MainActivity.this, CreateAccount.class);
-            startActivity(i);
-        }
-    }
-
 
 
     @Override

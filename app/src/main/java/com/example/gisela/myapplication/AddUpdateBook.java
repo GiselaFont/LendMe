@@ -64,21 +64,24 @@ public class AddUpdateBook extends AppCompatActivity {
 
 
                 if (mode.equals("Add")) {
-                    newBook.setBookAuthor(bookAuthorEditText.getText().toString());
-                    newBook.setBookName(bookTitleEditText.getText().toString());
-                    newBook.setISBN(Long.parseLong(ISBNEditText.getText().toString()));
-                    bookData.addBook(newBook);
-                    if (newBook.getBookAuthor().equals("") || newBook.getBookName().equals("") || String.valueOf(newBook.getISBN()).equals("")) {
-                        Toast t = Toast.makeText(AddUpdateBook.this, "Improper Book Entry!", Toast.LENGTH_SHORT);
-                        t.show();
-                        Intent i = new Intent(AddUpdateBook.this, ProfilePage.class);
-                        startActivity(i);
-                    } else {
+                    try {
+                        newBook.setBookAuthor(bookAuthorEditText.getText().toString());
+                        newBook.setBookName(bookTitleEditText.getText().toString());
+                        newBook.setISBN(Long.parseLong(ISBNEditText.getText().toString()));
+                        bookData.addBook(newBook);
                         Toast t = Toast.makeText(AddUpdateBook.this, newBook.getBookName() + " has been added successfully !", Toast.LENGTH_SHORT);
                         t.show();
                         Intent i = new Intent(AddUpdateBook.this, ProfilePage.class);
                         startActivity(i);
                     }
+                    catch(Exception ex) {
+
+                        Toast t = Toast.makeText(AddUpdateBook.this, "Improper Book Entry!", Toast.LENGTH_SHORT);
+                        t.show();
+                        Intent i = new Intent(AddUpdateBook.this, ProfilePage.class);
+                        startActivity(i);
+                    }
+
                 } else {
 
                     oldBook.setBookAuthor(bookAuthorEditText.getText().toString());
